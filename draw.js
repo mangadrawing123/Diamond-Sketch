@@ -3,8 +3,8 @@ window.onload = function() {
     document.ontouchmove = function(e){ e.preventDefault(); }
   
     var canvas  = document.querySelector('#main');
-    const width = canvas.width = window.innerWidth;
-    const height = canvas.height = window.innerHeight;
+    // const width = canvas.width = window.innerWidth;
+    // const height = canvas.height = window.innerHeight;
     var canvastop = canvas.offsetTop;
   
     var context = canvas.getContext("2d");

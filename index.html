@@ -4,14 +4,19 @@
   <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
 
   <style>
-    html, body {margin:10px; touch-action: auto;}
-    #main {border: 1px solid #0000ff; touch-action: auto;}
+    .container {
+      margin: 10px;
+    overflow: scroll;
+      }
+    #main {border: 1px solid #0000ff; overflow: scroll;}
   </style>
   
   <script src="draw.js"></script>
 </head> 
 <body>
+  <div class="container">
   <button id="clear">clear button that will clear teh canvas</button><br>
-  <canvas id="main"></canvas>
+  <canvas id="main" width="250" height="1000"></canvas>
+</div>
 </body>
 </html>
