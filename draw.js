@@ -3,8 +3,8 @@ window.onload = function() {
     document.ontouchmove = function(e){ e.preventDefault(); }
   
     var canvas  = document.querySelector('#main');
-    // const width = canvas.width = window.innerWidth;
-    // const height = canvas.height = window.innerHeight;
+    const width = canvas.width = window.innerWidth;
+    const height = canvas.height = window.innerHeight*2;
     var canvastop = canvas.offsetTop;
   
     var context = canvas.getContext("2d");
@@ -63,7 +63,7 @@ window.onload = function() {
   
   
     var clearButton = document.getElementById('clear')
-    clearButton.onclick = clear
+    clearButton.onclick = context.clearRect(0, 0, canvas.width, canvas.height)
   
     clear()
   }
