@@ -18,8 +18,38 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+
 
 #myCanvas {
     /* border:1px solid #000000; */
+}
+
+.tool img {
+    width: 100%;
+}
+
+#toolbar.mobile.open .tool {
+    pointer-events: auto;
+}
+
+#toolbar.mobile .tool.active {
+    opacity: 1;
+    filter: none;
+    background-color: #eeeeee;
+    pointer-events: auto;
+}
+
+#toolbar {
+    text-align: center;
+}
+
+html {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 57%;
+    color: #666666;
+    -webkit-user-select: none;
 }

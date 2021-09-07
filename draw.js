@@ -4,16 +4,22 @@
     ctx.canvas.height  = window.innerHeight*5;
     var brushsize =1;
 
-    ctx.strokeStyle = "#3E8CEC";
-    ctx.lineWidth = brushsize;
-
+    
     var StartTouch = function(event) {
-        event.preventDefault();
-        ctx.beginPath();
+      event.preventDefault();
+      ctx.beginPath();
     };
-
+    
     var MoveTouch = function(event) {
-        event.preventDefault();
+      event.preventDefault();
+      if(event.touches.length == 1) {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.strokeStyle = "#3E8CEC";
+        ctx.lineWidth = brushsize;
+        } else {
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.lineWidth = 100;
+        }
         ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY - 15);
         ctx.stroke();
     };
@@ -22,7 +28,6 @@
         event.preventDefault();
         var img = document.getElementById("scream");
         ctx.drawImage(img, 220, 290, 60, 60);
-
     };
 
     function red_color() {
@@ -77,3 +82,4 @@
       var dt = c.toDataURL('image/jpeg');
       location.href = dt;
   };
+
