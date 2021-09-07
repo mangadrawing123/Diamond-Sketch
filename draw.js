@@ -74,12 +74,15 @@
     img.src = url;
     };
 
-    function saveimagePNG() {
-        var dt = c.toDataURL('image/png');
-        location.href = dt;
-    };
-    function saveimageJPEG() {
-      var dt = c.toDataURL('image/jpeg');
-      location.href = dt;
+    // function saveimagePNG() {
+    //     var dt = c.toDataURL('image/png');
+    //     location.href = dt;
+    // };
+  //   function saveimageJPEG() {
+  //     var dt = c.toDataURL('image/jpg');
+  //     location.href = dt;
+  // };
+  function downloadImage() {
+    var image = c.toDataURL("image/jpg");
+    document.getElementById("download").href = image;
   };
-

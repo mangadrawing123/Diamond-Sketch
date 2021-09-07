@@ -16,7 +16,7 @@
 
     <canvas id="myCanvas" class="rahmen" ></canvas>
     <script src="draw.js"></script>
-    <div class="button_menu">
+    <!-- <div class="button_menu">
         <button onclick="blue_color()" class="buttonclass blue">b</button>
         <button onclick="green_color()" class="buttonclass green">g</button>
         <button onclick="red_color()" class="buttonclass red">r</button>
@@ -26,7 +26,7 @@
         <button onclick="clearContent()" class="buttonclass">x</button>
 
         <img id="scream" src="coke.png" width="400" height="400" style="display:none">
-    </div>
+    </div> -->
     <!-- <div id="toolbar" class="mobile open">
         <div class="tool pencil active">
             <img src="icons\pencil.svg" draggable="false">
@@ -39,9 +39,9 @@
     </div> -->
   
   <input type="file" id="snap" accept="image/*;capture=camera" >
-        <button onclick="saveimagePNG()" class="">savePNG</button>
-        <button onclick="saveimageJPEG()" class="">saveJPEG</button>
-
-</body>
+        <!-- <button onclick="saveimagePNG()" class="">savePNG</button> -->
+        <!-- <button onclick="saveimageJPEG()" class="">saveJPEG</button> -->
+        <a id="download" download="myImage.png" href="" onclick="downloadImage()">Download Sketch.png</a>
+    </body>
 
 </html>
