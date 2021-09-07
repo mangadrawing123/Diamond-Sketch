@@ -4,9 +4,9 @@ window.onload = function() {
   
     var canvas  = document.querySelector('#main');
     const width = canvas.width = window.innerWidth;
-    const height = canvas.height = window.innerHeight*2;
+    const height = canvas.height = window.innerHeight*3;
     var canvastop = canvas.offsetTop;
-  
+    
     var context = canvas.getContext("2d");
   
     var lastx;
@@ -61,9 +61,10 @@ window.onload = function() {
       lasty = newy;
     }
   
-  
-    var clearButton = document.getElementById('clear')
-    clearButton.onclick = context.clearRect(0, 0, canvas.width, canvas.height)
-  
-    clear()
+  }
+
+  function clear() {
+    var canvas = document.getElementById('main'),
+    ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
