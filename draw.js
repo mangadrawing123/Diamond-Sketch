@@ -1,70 +1,79 @@
-window.onload = function() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext('2d');
+    ctx.canvas.width  = window.innerWidth-20;
+    ctx.canvas.height  = window.innerHeight*5;
+    var brushsize =1;
 
-    document.ontouchmove = function(e){ e.preventDefault(); }
-  
-    var canvas  = document.querySelector('#main');
-    const width = canvas.width = window.innerWidth;
-    const height = canvas.height = window.innerHeight*3;
-    var canvastop = canvas.offsetTop;
-    
-    var context = canvas.getContext("2d");
-  
-    var lastx;
-    var lasty;
-  
-    context.strokeStyle = "#000000";
-    context.lineCap = 'round';
-    context.lineJoin = 'round';
-    context.lineWidth = 5;
-  
-    function clear() {
-      context.fillStyle = "#ffffff";
-      context.rect(0, 0, 300, 300);
-      context.fill();
-    }
-  
-    function dot(x,y) {
-      context.beginPath();
-      context.fillStyle = "#000000";
-      context.arc(x,y,1,0,Math.PI*2,true);
-      context.fill();
-      context.stroke();
-      context.closePath();
-    }
-  
-    function line(fromx,fromy, tox,toy) {
-      context.beginPath();
-      context.moveTo(fromx, fromy);
-      context.lineTo(tox, toy);
-      context.stroke();
-      context.closePath();
-    }
-  
-    canvas.ontouchstart = function(event){                   
-      event.preventDefault();                 
-      
-      lastx = event.touches[0].clientX;
-      lasty = event.touches[0].clientY - canvastop;
-  
-      dot(lastx,lasty);
-    }
-  
-    canvas.ontouchmove = function(event){                   
-      event.preventDefault();                 
-  
-      var newx = event.touches[0].clientX;
-      var newy = event.touches[0].clientY - canvastop;
-  
-      line(lastx,lasty, newx,newy);
-      
-      lastx = newx;
-      lasty = newy;
-    }
-  
-  }
+    ctx.strokeStyle = "#3E8CEC";
+    ctx.lineWidth = brushsize;
 
-  function clear() {
-    var canvas = document.getElementById('main'),
-    ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-  }
+    var StartTouch = function(event) {
+        event.preventDefault();
+        ctx.beginPath();
+    };
+
+    var MoveTouch = function(event) {
+        event.preventDefault();
+        ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY - 15);
+        ctx.stroke();
+    };
+
+    var EndTouch = function(event) {
+        event.preventDefault();
+        var img = document.getElementById("scream");
+        ctx.drawImage(img, 220, 290, 60, 60);
+
+    };
+
+    function red_color() {
+        ctx.strokeStyle = "red";
+    }
+
+    function green_color() {
+        ctx.strokeStyle = "green";
+    }
+
+    function blue_color() {
+        ctx.strokeStyle = "blue";
+    }
+
+    function brushplus() {
+        brushsize++;
+        brushsize++;
+        ctx.lineWidth = brushsize;
+    }
+
+    function brushminus() {
+        brushsize--;
+        brushsize--;
+        ctx.lineWidth = brushsize;
+    }
+
+    function clearContent() {
+        var w = c.width;
+        c.width = 10;
+        c.width = w;
+    }
+
+    c.addEventListener("touchstart", StartTouch, false);
+    c.addEventListener("touchmove", MoveTouch, false);
+    c.addEventListener("touchend", EndTouch, false);
+
+    var snap = document.getElementById("snap");
+    snap.onchange=function(e){ 
+    var url = URL.createObjectURL(e.target.files[0]);
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, c.width, c.height);    
+    }
+    img.src = url;
+    };
+
+    function saveimagePNG() {
+        var dt = c.toDataURL('image/png');
+        location.href = dt;
+    };
+    function saveimageJPEG() {
+      var dt = c.toDataURL('image/jpeg');
+      location.href = dt;
+  };

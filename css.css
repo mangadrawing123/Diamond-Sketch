@@ -1,0 +1,26 @@
+.buttonclass {
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#myCanvas {
+    /* position: absolute; */
+    border:1px solid #000000;
+}
