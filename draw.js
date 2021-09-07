@@ -1,6 +1,6 @@
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext('2d');
-    ctx.canvas.width  = window.innerWidth-20;
+    ctx.canvas.width  = window.innerWidth-10;
     ctx.canvas.height  = window.innerHeight*5;
     var brushsize =1;
 
