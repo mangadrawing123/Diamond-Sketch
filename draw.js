@@ -18,7 +18,7 @@
         ctx.lineWidth = brushsize;
         } else {
           ctx.globalCompositeOperation = 'destination-out';
-          ctx.lineWidth = 100;
+          ctx.lineWidth = 70;
         }
         ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY - 15);
         ctx.stroke();
