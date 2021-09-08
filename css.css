@@ -4,9 +4,10 @@
 }
 
 html, body {
+    touch-action: pan-y;
+    overscroll-behavior-y: none ;
     overscroll-behavior-x: none;
-    overscroll-behavior-y: none;
-  }
+}
 
 button {
     background-color: #368acf;

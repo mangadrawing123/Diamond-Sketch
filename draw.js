@@ -80,7 +80,3 @@
     var w = window.open();
     w.document.write('<img src="'+dataURL+'"/>');
   }
-
-
-
-
