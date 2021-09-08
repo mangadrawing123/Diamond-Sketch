@@ -1,13 +1,13 @@
 window.addEventListener('load', 
   function() { 
-    alert('hello!');
+    alert('New page ready!');
   }, false);
 
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext('2d');
     ctx.canvas.width  = window.innerWidth- window.innerWidth*.06;
     ctx.canvas.height  = window.innerHeight*5;
-    var brushsize =1;
+    var brushsize =5;
 
     
     var StartTouch = function(event) {
