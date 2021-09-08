@@ -64,24 +64,21 @@
     c.addEventListener("touchmove", MoveTouch, false);
     c.addEventListener("touchend", EndTouch, false);
 
-    var snap = document.getElementById("snap");
-    snap.onchange=function(e){ 
-    var url = URL.createObjectURL(e.target.files[0]);
-    var img = new Image();
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0, c.width, c.height);    
-    }
-    img.src = url;
-    };
+    // var snap = document.getElementById("snap");
+    // snap.onchange=function(e){ 
+    // var url = URL.createObjectURL(e.target.files[0]);
+    // var img = new Image();
+    // img.onload = function() {
+    //     ctx.drawImage(img, 0, 0, c.width, c.height);    
+    // }
+    // img.src = url;
+    // };
 
    
   function saveImage() {
-    var dataURL = c.toDataURL("image/jpeg");
-    var w = window.open('tap on image to Save Image on phone', 'image from canvas')
-    w.document.write("<img src='"+dataURL+"' alt='from canvas'/>");
-    // document.getElementById("theimage").src = c.toDataURL();
-    alert("tap on image to Save Image on phone")
-    console.log("hello")
+    var dataURL = c.toDataURL("image/png");
+    var w = window.open();
+    w.document.write('<img src="'+dataURL+'"/>');
   }
 
 
