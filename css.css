@@ -1,8 +1,3 @@
-.buttonclass {
-    border-radius: 50%;
-    border: 1px solid black;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -11,4 +6,17 @@
 html, body {
     overscroll-behavior-x: none;
     overscroll-behavior-y: none;
+}
+
+button {
+    background-color: #368acf;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
   }
