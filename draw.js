@@ -76,7 +76,7 @@
 
    
   function saveImage() {
-    var dataURL = c.toDataURL("image/png");
+    var dataURL = c.toDataURL("image/jpeg");
     var w = window.open();
     w.document.write('<img src="'+dataURL+'"/>');
   }
