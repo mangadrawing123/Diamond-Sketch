@@ -1,3 +1,8 @@
+window.addEventListener('load', 
+  function() { 
+    alert('hello!');
+  }, false);
+
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext('2d');
     ctx.canvas.width  = window.innerWidth- window.innerWidth*.06;
@@ -76,7 +81,7 @@
 
    
   function saveImage() {
-    var dataURL = c.toDataURL("image/jpeg");
+    var dataURL = c.toDataURL("image/png");
     var w = window.open();
     w.document.write('<img src="'+dataURL+'"/>');
   }
