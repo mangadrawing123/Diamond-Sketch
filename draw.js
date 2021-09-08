@@ -76,7 +76,7 @@
 
    
   function saveImage() {
-    var dataURL = c.toDataURL("image/png");
+    var dataURL = c.toDataURL("image/jpg");
     var w = window.open('tap on image to Save Image on phone', 'image from canvas')
     w.document.write("<img src='"+dataURL+"' alt='from canvas'/>");
     // document.getElementById("theimage").src = c.toDataURL();
