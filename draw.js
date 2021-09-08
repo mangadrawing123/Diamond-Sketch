@@ -7,11 +7,6 @@
     
     var StartTouch = function(event) {
       event.preventDefault();
-      ctx.beginPath();
-    };
-    
-    var MoveTouch = function(event) {
-      event.preventDefault();
       if(event.touches.length == 1) {
         ctx.globalCompositeOperation = 'source-over';
         ctx.strokeStyle = "#3E8CEC";
@@ -20,6 +15,11 @@
           ctx.globalCompositeOperation = 'destination-out';
           ctx.lineWidth = 70;
         }
+      ctx.beginPath();
+    };
+    
+    var MoveTouch = function(event) {
+      event.preventDefault();
         ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY - 15);
         ctx.stroke();
     };
