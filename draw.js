@@ -26,8 +26,8 @@
 
     var EndTouch = function(event) {
         event.preventDefault();
-        var img = document.getElementById("scream");
-        ctx.drawImage(img, 220, 290, 60, 60);
+        // var img = document.getElementById("scream");
+        // ctx.drawImage(img, 220, 290, 60, 60);
     };
 
     function red_color() {
@@ -74,15 +74,16 @@
     img.src = url;
     };
 
-    // function saveimagePNG() {
-    //     var dt = c.toDataURL('image/png');
-    //     location.href = dt;
-    // };
-  //   function saveimageJPEG() {
-  //     var dt = c.toDataURL('image/jpg');
-  //     location.href = dt;
-  // };
-  function downloadImage() {
-    var image = c.toDataURL("image/jpg");
-    document.getElementById("download").href = image;
-  };
+   
+  function saveImage() {
+    var dataURL = c.toDataURL("image/png");
+    var w = window.open('tap on image to Save Image on phone', 'image from canvas')
+    w.document.write("<img src='"+dataURL+"' alt='from canvas'/>");
+    // document.getElementById("theimage").src = c.toDataURL();
+    alert("tap on image to Save Image on phone")
+    console.log("hello")
+  }
+
+
+
+

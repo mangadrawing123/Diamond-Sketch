@@ -8,40 +8,17 @@
     <meta name="apple-mobile-web-capable" content="yes" />
     <link rel="icon" sizes="196x196" href="nice-highres.png">
     <link rel="stylesheet" href="css.css">
-    <link rel="apple-touch-icon" href="icon-iphone.png" />
+    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
-
-
-    <canvas id="myCanvas" class="rahmen" ></canvas>
+        <canvas id="myCanvas" ></canvas>
     <script src="draw.js"></script>
-    <!-- <div class="button_menu">
-        <button onclick="blue_color()" class="buttonclass blue">b</button>
-        <button onclick="green_color()" class="buttonclass green">g</button>
-        <button onclick="red_color()" class="buttonclass red">r</button>
-
-        <button onclick="brushplus()" class="buttonclass">+</button>
-        <button onclick="brushminus()" class="buttonclass">-</button>
-        <button onclick="clearContent()" class="buttonclass">x</button>
-
-        <img id="scream" src="coke.png" width="400" height="400" style="display:none">
-    </div> -->
-    <!-- <div id="toolbar" class="mobile open">
-        <div class="tool pencil active">
-            <img src="icons\pencil.svg" draggable="false">
-            <label>Draw</label>
-        </div>
-        <div class="tool eraser">
-            <img src="icons\earser.png" draggable="false">
-            <label>Eraser</label>
-        </div>
-    </div> -->
-  
-  <input type="file" id="snap" accept="image/*;capture=camera" >
-        <!-- <button onclick="saveimagePNG()" class="">savePNG</button> -->
-        <!-- <button onclick="saveimageJPEG()" class="">saveJPEG</button> -->
-        <a id="download" download="myImage.png" href="" onclick="downloadImage()">Download Sketch.png</a>
-    </body>
+    
+    <!-- <input type="file" id="snap" accept="image/*;capture=camera" > -->
+    <button id="saveImage" onclick="saveImage()">save Image</button>
+    <!-- <image id="theimage"></image> -->
+</body>
 
 </html>

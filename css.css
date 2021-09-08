@@ -3,24 +3,12 @@
     border: 1px solid black;
 }
 
-/* .blue {
-    background-color: blue;
-}
-
-.green {
-    background-color: green;
-}
-
-.red {
-    background-color: red;
-} */
-
 * {
     margin: 0;
     padding: 0;
 }
 
-#myCanvas {
-    /* border:1px solid #000000; */
-}
-
+html, body {
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+  }
