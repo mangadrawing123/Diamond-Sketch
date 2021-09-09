@@ -69,15 +69,15 @@ window.addEventListener('load',
     c.addEventListener("touchmove", MoveTouch, false);
     c.addEventListener("touchend", EndTouch, false);
 
-    // var snap = document.getElementById("snap");
-    // snap.onchange=function(e){ 
-    // var url = URL.createObjectURL(e.target.files[0]);
-    // var img = new Image();
-    // img.onload = function() {
-    //     ctx.drawImage(img, 0, 0, c.width, c.height);    
-    // }
-    // img.src = url;
-    // };
+    var snap = document.getElementById("snap");
+    snap.onchange=function(e){ 
+    var url = URL.createObjectURL(e.target.files[0]);
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, c.width, c.height);    
+    }
+    img.src = url;
+    };
 
    
   function saveImage() {
