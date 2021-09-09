@@ -4,8 +4,8 @@
 }
 
 html, body {
-    touch-action: pan-y;
-    touch-action: manipulation;
+    /* touch-action: pan-y; */
+    /* touch-action: manipulation; */
     overscroll-behavior-y: none ;
     overscroll-behavior-x: none;
 }

@@ -1,25 +1,27 @@
 
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>touch drawing app</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="apple-mobile-web-capable" content="yes" />
-    <link rel="icon" sizes="196x196" href="nice-highres.png">
-    <link rel="stylesheet" href="css.css">
-    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="//unpkg.com/prevent-pull-refresh"></script>
-    <meta name="viewport" content="user-scalable=no"/>
-
-</head>
-
+    
+    <head>
+        <title>Diamond Sketch website</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-capable" content="yes" />
+        <link rel="icon" sizes="196x196" href="nice-highres.png">
+        <link rel="stylesheet" href="css.css">
+        <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="//unpkg.com/prevent-pull-refresh"></script>
+        <!-- <meta name="viewport" content="user-scalable=no"/> -->
+        
+    </head>
+    
 <body>
         <canvas id="myCanvas" ></canvas>
         <!-- <input type="file" id="snap" accept="image/*;capture=camera" > -->
-        <button id="saveImage" onclick="saveImage()">Save Image to Phone</button>
+        <button id="saveImage" onclick="saveImage()">Save .PNG Image to Phone</button><br><br>
+        <button id="saveImage" onclick="saveImageDesktop()">Save .PNG Image for Desktop</button>
 </body>
+
 <script src="draw.js"></script>
 
 </html>

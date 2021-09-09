@@ -5,9 +5,9 @@ window.addEventListener('load',
 
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext('2d');
-    ctx.canvas.width  = window.innerWidth- window.innerWidth*.06;
-    ctx.canvas.height  = window.innerHeight*5;
-    var brushsize =5;
+    ctx.canvas.width  = window.innerWidth- window.innerWidth*.03;
+    ctx.canvas.height  = window.innerHeight*6;
+    var brushsize =2;
 
     
     var StartTouch = function(event) {
@@ -85,3 +85,16 @@ window.addEventListener('load',
     var w = window.open();
     w.document.write('<img src="'+dataURL+'"/>');
   }
+
+  function saveImageDesktop() {
+    var dataURL = c.toDataURL("image/png");
+      let downloadLink = document.createElement('a');
+      downloadLink.setAttribute('download', 'CanvasAsImage.png');
+      let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
+      downloadLink.setAttribute('href', url);
+      downloadLink.click();
+  };
+
+  window.onbeforeunload = function() {
+    return "Leaving this page will reset the wizard";
+};
