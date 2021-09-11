@@ -1,5 +1,5 @@
 # sketchWebtoon
-To use the Diamond Sketch website, link here: https://mangadrawing123.github.io/sketchWebtoon/
+To use the Diamond Sketch website, link here: https://github.com/mangadrawing123/Diamond-Sketch
 
 How-To use:
 one finger = pen
