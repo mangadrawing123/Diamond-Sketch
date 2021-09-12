@@ -12,12 +12,13 @@ var ctx = c.getContext('2d');
 ctx.canvas.width  = window.innerWidth- window.innerWidth*.03;
 ctx.canvas.height  = window.innerHeight*10;
 var brushsize =2;
+var brushSizeEraser = 70;
 
 ///Asign shift key to be eraser
 var isKeyPressed= function (event) {
   if (event.shiftKey) {
     ctx.globalCompositeOperation = 'destination-out';
-    ctx.lineWidth = 70;
+    ctx.lineWidth = brushSizeEraser;
     ctx.beginPath();
   }
 }
@@ -30,10 +31,10 @@ var StartTouch = function(event) {
     ctx.lineWidth = brushsize;
     } else if (event.shiftKey){
       ctx.globalCompositeOperation = 'destination-out';
-      ctx.lineWidth = 70;
+      ctx.lineWidth = brushSizeEraser;
     } else {
       ctx.globalCompositeOperation = 'destination-out';
-      ctx.lineWidth = 70;
+      ctx.lineWidth = brushSizeEraser;
     }
   ctx.beginPath();
 };
@@ -48,10 +49,11 @@ var EndTouch = function(event) {
     event.preventDefault();
 };
 
+
 c.addEventListener("touchstart", StartTouch, false);
-c.addEventListener("touchstart", isKeyPressed, false);
 c.addEventListener("touchmove", MoveTouch, false);
 c.addEventListener("touchend", EndTouch, false);
+c.addEventListener("touchstart", isKeyPressed, false);
 
 var snap = document.getElementById("snap");
 snap.onchange=function(e){ 
