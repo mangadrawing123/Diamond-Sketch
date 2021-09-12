@@ -10,9 +10,9 @@ window.onbeforeunload = function() {
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext('2d');
 ctx.canvas.width  = window.innerWidth- window.innerWidth*.03;
-ctx.canvas.height  = window.innerHeight*10;
+ctx.canvas.height  = window.innerHeight*6;
 var brushsize =2;
-var brushSizeEraser = 70;
+var brushSizeEraser = 50;
 
 ///Asign shift key to be eraser
 var isKeyPressed= function (event) {
@@ -41,7 +41,7 @@ var StartTouch = function(event) {
 
 var MoveTouch = function(event) {
   event.preventDefault();
-    ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY - 15);
+    ctx.lineTo(event.touches[0].pageX, event.touches[0].pageY-15);
     ctx.stroke();
 };
 
