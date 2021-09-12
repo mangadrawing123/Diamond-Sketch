@@ -19,7 +19,14 @@ click "Download Image png"
 Problem with accidentally swiping left to the next page in ios?
 Consider delete "Turn Pages' ' setting in Accessibility.
 
-
-
-
 More info: https://discussions.apple.com/thread/5738986
+
+
+///////////TRY AND ERROR/////////////////////
+Rightclick mouse for eraser : doesn't work with mobile touch! 
+https://jsfiddle.net/mangadrawing123/39bufx8e/44/
+
+- assign right-click and e.touches==2?:
+
+
+

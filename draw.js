@@ -13,17 +13,28 @@ ctx.canvas.width  = window.innerWidth- window.innerWidth*.03;
 ctx.canvas.height  = window.innerHeight*10;
 var brushsize =2;
 
+///Asign shift key to be eraser
+var isKeyPressed= function (event) {
+  if (event.shiftKey) {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineWidth = 70;
+    ctx.beginPath();
+  }
+}
     
 var StartTouch = function(event) {
-  event.preventDefault();
+  // event.preventDefault();
   if(event.touches.length == 1) {
     ctx.globalCompositeOperation = 'source-over';
     ctx.strokeStyle = "#3E8CEC";
     ctx.lineWidth = brushsize;
+    } else if (event.shiftKey){
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.lineWidth = 70;
     } else {
       ctx.globalCompositeOperation = 'destination-out';
       ctx.lineWidth = 70;
-    } 
+    }
   ctx.beginPath();
 };
 
@@ -35,11 +46,10 @@ var MoveTouch = function(event) {
 
 var EndTouch = function(event) {
     event.preventDefault();
-    // var img = document.getElementById("scream");
-    // ctx.drawImage(img, 220, 290, 60, 60);
 };
 
 c.addEventListener("touchstart", StartTouch, false);
+c.addEventListener("touchstart", isKeyPressed, false);
 c.addEventListener("touchmove", MoveTouch, false);
 c.addEventListener("touchend", EndTouch, false);
 
@@ -68,62 +78,5 @@ function saveImageDesktop() {
   downloadLink.setAttribute('href', url);
   downloadLink.click();
 };
-
-
-////for MOUSE DRAWING///
-//Canvas
-// var canvas = document.getElementById('myCanvas');
-// var ctx = canvas.getContext('2d');
-//Variables
-var canvasx = $(c).offset().left;
-var canvasy = $(c).offset().top;
-var last_mousex = last_mousey = 0;
-var mousex = mousey = 0;
-var mousedown = false;
-
-//Mousedown
-$(c).on('mousedown', function(e) {
-      last_mousex = mousex = parseInt(e.clientX-canvasx);
-      last_mousey = mousey = parseInt(e.clientY-canvasy);
-      mousedown = true;
-});
-
-//Mouseup
-$(c).on('mouseup', function(e) {
-    mousedown = false;
-});
-
-//Mousemove
-$(c).on('mousemove', function(e) {
-    mousex = parseInt(e.clientX-canvasx);
-    mousey = parseInt(e.clientY-canvasy);
-    switch (e.which) {
-    case 1: // leftclick
-      ctx.globalCompositeOperation = 'source-over';
-            ctx.strokeStyle = "#3E8CEC";
-            ctx.lineWidth = 3;
-      break;
-    case 2:
-      alert("midde mouse click");
-      break;
-    case 3: //right click earser
-    	e.preventDefault();
-    	ctx.globalCompositeOperation = 'destination-out';
-      ctx.lineWidth = 20;
-      break;
-    }
-    if(mousedown) {
-        ctx.beginPath();
-        ctx.moveTo(last_mousex,last_mousey);
-        ctx.lineTo(mousex,mousey);
-        ctx.lineJoin = ctx.lineCap = 'round';
-        ctx.stroke();
-    }
-    last_mousex = mousex;
-    last_mousey = mousey;
-    //Output
-    $('#output').html('current: '+mousex+', '+mousey+'<br/>last: '+last_mousex+', '+last_mousey+'<br/>mousedown: '+mousedown);
-});
-
 
 
