@@ -22,3 +22,30 @@ button {
     margin: 4px 2px;
     cursor: pointer;
   }
+
+/* .gotopBtn {
+    position: fixed;
+    width: 72px;
+    height: 72px;
+    background: #226ca8;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+} */
+
+.gotopBtn{
+    position: fixed;
+    width: 72px;
+    height: 72px;
+    background: #226ca8;
+    bottom: 10px;
+    left: 10px;
+    /* object-fit: cover; */
+    border-radius: 30%;
+    /* border: 2px solid #fff; */
+}
+
