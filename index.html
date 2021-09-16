@@ -11,9 +11,7 @@
         <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
         <script src="//unpkg.com/prevent-pull-refresh"></script>
-        <link rel="stylesheet" href="http://astronautweb.co/snippet/font-awesome/">
-        <!-- <meta name="viewport" content="user-scalable=no"/> -->
-        
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true" ></script>
     </head>
     
 <body>
@@ -22,9 +20,17 @@
         <button id="saveImage" onclick="saveImage()">Save .PNG Image to Phone</button><br><br>
         <button id="saveImage" onclick="saveImageDesktop()">Save .PNG Image for Desktop</button>
 
-        <a class="gotopBtn" href="#"> <img src="icons/scrollTop.png" alt=""></a>
+        <div class="adminActions">
+            <input type="checkbox" name="adminToggle" class="adminToggle" />
+            <a class="adminButton" title="Pen" href="#"><i class="admindActions__icon adminButton__icon fas fa-pencil-alt"></i></a>
+            <div class="adminButtons">
+                <!-- <a href="#" title="Hand"><i class="admindActions__icon fas fa-hand-paper"></i></a> -->
+                <a href="#" title="Eraser"><i class="admindActions__icon fas fa-eraser"></i></a>
+                <a href="#" title="Text"><i class="admindActions__icon fas fa-font"></i></a>
+            </div>
+        </div>
 </body>
 
-<script src="draw.js"></script>
+        <script src="draw.js"></script>
 
 </html>
